@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudio Web · Dibujo técnico</title>
+<meta name="description" content="Sitios de dibujo técnico y plantas de vivienda: material de clase, ejercicios y recursos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#EDF1F2; --tinta:#17283A; --trazo:#2A5D8F; --lapiz:#B8321F; --hoja:#FFFFFF; --gris:#5D6B78;
+  --fuente-titulo:"Barlow Condensed","Arial Narrow",sans-serif;
+  --fuente-texto:"Barlow",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:1rem}
+body{
+  margin:0; color:var(--tinta); background:var(--papel);
+  font:400 1.05rem/1.6 var(--fuente-texto);
+  background-image:
+    linear-gradient(rgba(42,93,143,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(42,93,143,.08) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.pagina{max-width:960px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
+
+/* Rótulo: el encabezado imita el rótulo de una lámina */
+.rotulo{
+  display:grid; grid-template-columns:2fr 1fr; background:var(--hoja);
+  border:2px solid var(--tinta);
+}
+.rotulo>div{padding:.6rem .9rem; border:1px solid var(--tinta); margin:-1px 0 0 -1px}
+.rotulo small{display:block;font-size:.8rem;color:var(--gris)}
+.rotulo .titulo{grid-row:span 2}
+h1{
+  margin:.2rem 0 0; font:700 clamp(2.6rem,9vw,4.8rem)/.95 var(--fuente-titulo);
+  letter-spacing:.01em;
+}
+.rotulo .dato{font:500 1.25rem/1.2 var(--fuente-titulo)}
+
+.intro{max-width:60ch;margin:2rem 0 1.5rem;font-size:1.15rem}
+
+h2{font:700 1.7rem/1.1 var(--fuente-titulo);margin:2.5rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--trazo)}
+
+.sitios{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.sitio{
+  display:flex;flex-direction:column;background:var(--hoja);color:inherit;text-decoration:none;
+  border:1.5px solid var(--tinta);padding:1.1rem 1.1rem 1rem;position:relative;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.sitio:hover,.sitio:focus-visible{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--trazo)}
+.sitio:focus-visible{outline:3px solid var(--lapiz);outline-offset:3px}
+.sitio h3{margin:0 0 .4rem;font:700 1.6rem/1.1 var(--fuente-titulo);color:var(--trazo)}
+.sitio p{margin:0 0 1rem;flex:1}
+.sitio .ir{font-weight:500;color:var(--lapiz)}
+
+.nota{margin-top:2.5rem;padding:1rem 1.1rem;border-left:4px solid var(--lapiz);background:var(--hoja);max-width:60ch}
+footer{margin-top:3rem;color:var(--gris);font-size:.95rem}
+
+@media (max-width:560px){
+  .rotulo{grid-template-columns:1fr}
+  .rotulo .titulo{grid-row:auto}
+}
+@media (prefers-reduced-motion:reduce){.sitio{transition:none}}
+</style>
+</head>
+<body>
+<main class="pagina">
+
+  <header class="rotulo">
+    <div class="titulo">
+      <small>Proyecto</small>
+      <h1>Estudio Web</h1>
+    </div>
+    <div><small>Tema</small><span class="dato">Dibujo técnico</span></div>
+    <div><small>Contenido</small><span class="dato">Plantas de vivienda</span></div>
+  </header>
+
+  <p class="intro">
+    Acá están reunidos mis sitios de dibujo técnico. Elegí el que necesites: cada uno tiene su propio material, ejercicios y recursos para las clases.
+  </p>
+
+  <h2>Mis sitios</h2>
+  <nav class="sitios" aria-label="Sitios">
+
+    <!-- EDITAR: cambiá el título, el texto y el enlace (href) de cada tarjeta.
+         Para agregar otro sitio, copiá un bloque <a class="sitio"> completo. -->
+
+    <a class="sitio" href="https://REEMPLAZAR-SITIO-1.lovable.app">
+      <h3>Nombre del sitio 1</h3>
+      <p>Descripción breve: qué encuentra la persona que entra a este sitio.</p>
+      <span class="ir">Abrir sitio</span>
+    </a>
+
+    <a class="sitio" href="https://REEMPLAZAR-SITIO-2.lovable.app">
+      <h3>Nombre del sitio 2</h3>
+      <p>Descripción breve: qué encuentra la persona que entra a este sitio.</p>
+      <span class="ir">Abrir sitio</span>
+    </a>
+
+    <a class="sitio" href="https://REEMPLAZAR-SITIO-3.lovable.app">
+      <h3>Nombre del sitio 3</h3>
+      <p>Descripción breve: qué encuentra la persona que entra a este sitio.</p>
+      <span class="ir">Abrir sitio</span>
+    </a>
+
+  </nav>
+
+  <footer>
+    <p>Estudio Web · Material de dibujo técnico para alumnos.</p>
+  </footer>
+
+</main>
+</body>
+</html>
