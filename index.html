@@ -1,117 +1,639 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estudio Web · Dibujo técnico</title>
-<meta name="description" content="Sitios de dibujo técnico y plantas de vivienda: material de clase, ejercicios y recursos.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --papel:#EDF1F2; --tinta:#17283A; --trazo:#2A5D8F; --lapiz:#B8321F; --hoja:#FFFFFF; --gris:#5D6B78;
-  --fuente-titulo:"Barlow Condensed","Arial Narrow",sans-serif;
-  --fuente-texto:"Barlow",system-ui,sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-padding-top:1rem}
-body{
-  margin:0; color:var(--tinta); background:var(--papel);
-  font:400 1.05rem/1.6 var(--fuente-texto);
-  background-image:
-    linear-gradient(rgba(42,93,143,.08) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(42,93,143,.08) 1px,transparent 1px);
-  background-size:24px 24px;
-}
-.pagina{max-width:960px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Rótulo: el encabezado imita el rótulo de una lámina */
-.rotulo{
-  display:grid; grid-template-columns:2fr 1fr; background:var(--hoja);
-  border:2px solid var(--tinta);
-}
-.rotulo>div{padding:.6rem .9rem; border:1px solid var(--tinta); margin:-1px 0 0 -1px}
-.rotulo small{display:block;font-size:.8rem;color:var(--gris)}
-.rotulo .titulo{grid-row:span 2}
-h1{
-  margin:.2rem 0 0; font:700 clamp(2.6rem,9vw,4.8rem)/.95 var(--fuente-titulo);
-  letter-spacing:.01em;
-}
-.rotulo .dato{font:500 1.25rem/1.2 var(--fuente-titulo)}
+  <title>Estudio Web | Sitios Inteligentes</title>
 
-.intro{max-width:60ch;margin:2rem 0 1.5rem;font-size:1.15rem}
+  <meta
+    name="description"
+    content="Estudio Web — Sitios inteligentes que no solo muestran. También saben."
+  >
 
-h2{font:700 1.7rem/1.1 var(--fuente-titulo);margin:2.5rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--trazo)}
-
-.sitios{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.sitio{
-  display:flex;flex-direction:column;background:var(--hoja);color:inherit;text-decoration:none;
-  border:1.5px solid var(--tinta);padding:1.1rem 1.1rem 1rem;position:relative;
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-.sitio:hover,.sitio:focus-visible{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--trazo)}
-.sitio:focus-visible{outline:3px solid var(--lapiz);outline-offset:3px}
-.sitio h3{margin:0 0 .4rem;font:700 1.6rem/1.1 var(--fuente-titulo);color:var(--trazo)}
-.sitio p{margin:0 0 1rem;flex:1}
-.sitio .ir{font-weight:500;color:var(--lapiz)}
-
-.nota{margin-top:2.5rem;padding:1rem 1.1rem;border-left:4px solid var(--lapiz);background:var(--hoja);max-width:60ch}
-footer{margin-top:3rem;color:var(--gris);font-size:.95rem}
-
-@media (max-width:560px){
-  .rotulo{grid-template-columns:1fr}
-  .rotulo .titulo{grid-row:auto}
-}
-@media (prefers-reduced-motion:reduce){.sitio{transition:none}}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<main class="pagina">
 
-  <header class="rotulo">
-    <div class="titulo">
-      <small>Proyecto</small>
-      <h1>Estudio Web</h1>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="#inicio" class="brand">
+        <span class="brand-main">ESTUDIO</span>
+        <span class="brand-sub">Sitios Inteligentes</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#servicios">Qué hacemos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
     </div>
-    <div><small>Tema</small><span class="dato">Dibujo técnico</span></div>
-    <div><small>Contenido</small><span class="dato">Plantas de vivienda</span></div>
   </header>
 
-  <p class="intro">
-    Acá están reunidos mis sitios de dibujo técnico. Elegí el que necesites: cada uno tiene su propio material, ejercicios y recursos para las clases.
-  </p>
 
-  <h2>Mis sitios</h2>
-  <nav class="sitios" aria-label="Sitios">
+  <main>
 
-    <!-- EDITAR: cambiá el título, el texto y el enlace (href) de cada tarjeta.
-         Para agregar otro sitio, copiá un bloque <a class="sitio"> completo. -->
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
 
-    <a class="sitio" href="https://REEMPLAZAR-SITIO-1.lovable.app">
-      <h3>Nombre del sitio 1</h3>
-      <p>Descripción breve: qué encuentra la persona que entra a este sitio.</p>
-      <span class="ir">Abrir sitio</span>
-    </a>
+        <div class="hero-copy">
 
-    <a class="sitio" href="https://REEMPLAZAR-SITIO-2.lovable.app">
-      <h3>Nombre del sitio 2</h3>
-      <p>Descripción breve: qué encuentra la persona que entra a este sitio.</p>
-      <span class="ir">Abrir sitio</span>
-    </a>
+          <span class="eyebrow">ESTUDIO WEB</span>
 
-    <a class="sitio" href="https://REEMPLAZAR-SITIO-3.lovable.app">
-      <h3>Nombre del sitio 3</h3>
-      <p>Descripción breve: qué encuentra la persona que entra a este sitio.</p>
-      <span class="ir">Abrir sitio</span>
-    </a>
+          <h1>
+            Webs que no solo muestran.
+            <span>También saben.</span>
+          </h1>
 
-  </nav>
+          <p class="hero-text">
+            Diseñamos sitios web que combinan información,
+            diseño e inteligencia para ayudar a cada proyecto
+            a comunicar, organizar y crecer.
+          </p>
 
-  <footer>
-    <p>Estudio Web · Material de dibujo técnico para alumnos.</p>
+          <div class="hero-actions">
+            <a href="#proyectos" class="btn btn-primary">
+              Ver proyectos
+            </a>
+
+            <a href="#contacto" class="btn btn-secondary">
+              Hablemos
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+          <div class="hero-card hero-card-main">
+            <div class="hero-card-top">
+              <span class="status-dot"></span>
+              <span>Sitio inteligente</span>
+            </div>
+
+            <div class="hero-card-content">
+              <div class="mini-line wide"></div>
+              <div class="mini-line"></div>
+              <div class="mini-line short"></div>
+            </div>
+
+            <div class="hero-card-bottom">
+              <span>Diseño</span>
+              <span>Datos</span>
+              <span>IA</span>
+            </div>
+          </div>
+
+
+          <div class="floating-card floating-card-one">
+            <strong>01</strong>
+            <span>Idea</span>
+          </div>
+
+          <div class="floating-card floating-card-two">
+            <strong>02</strong>
+            <span>Inteligencia</span>
+          </div>
+
+          <div class="floating-card floating-card-three">
+            <strong>03</strong>
+            <span>Web</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro section">
+      <div class="container intro-grid">
+
+        <div>
+          <span class="section-label">UNA NUEVA FORMA DE WEB</span>
+
+          <h2>
+            No se trata solamente
+            de tener una página.
+          </h2>
+        </div>
+
+        <div class="intro-text">
+          <p>
+            Un sitio puede ser mucho más que una vidriera.
+            Puede organizar información, ayudar a las personas,
+            conectar contenidos y utilizar inteligencia artificial
+            para ofrecer una experiencia diferente.
+          </p>
+
+          <p>
+            En Estudio Web pensamos cada proyecto desde esa
+            perspectiva: <strong>diseño + información + inteligencia.</strong>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICIOS -->
+    <section class="section services-section" id="servicios">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">QUÉ HACEMOS</span>
+
+          <h2>
+            Sitios pensados para cada proyecto.
+          </h2>
+
+          <p>
+            Desde una página institucional hasta una herramienta
+            inteligente construida alrededor de una idea.
+          </p>
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <div class="service-number">01</div>
+
+            <h3>Sitios web</h3>
+
+            <p>
+              Sitios claros, modernos y adaptados a celulares,
+              pensados para presentar un proyecto, producto,
+              servicio o emprendimiento.
+            </p>
+
+            <span class="service-tag">
+              Diseño + Web
+            </span>
+          </article>
+
+
+          <article class="service-card reveal">
+            <div class="service-number">02</div>
+
+            <h3>Sitios inteligentes</h3>
+
+            <p>
+              Webs que incorporan búsqueda, organización de
+              información, asistentes y herramientas de
+              inteligencia artificial.
+            </p>
+
+            <span class="service-tag">
+              Web + IA
+            </span>
+          </article>
+
+
+          <article class="service-card reveal">
+            <div class="service-number">03</div>
+
+            <h3>Conocimiento</h3>
+
+            <p>
+              Convertimos información, documentos y experiencia
+              en sistemas digitales que pueden ser consultados
+              y utilizados de manera más inteligente.
+            </p>
+
+            <span class="service-tag">
+              Información + IA
+            </span>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROYECTOS -->
+    <section class="section projects-section" id="proyectos">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">PROYECTOS</span>
+
+          <h2>
+            Ideas que ya están tomando forma.
+          </h2>
+
+          <p>
+            Algunos proyectos que muestran distintas formas
+            de aplicar diseño, información e inteligencia.
+          </p>
+        </div>
+
+
+        <div class="projects-grid">
+
+          <article
+            class="project-card project-cotv reveal"
+            data-project="cotv"
+          >
+
+            <div class="project-image">
+              <div class="project-symbol">
+                COTV
+              </div>
+
+              <span class="project-type">
+                Educación + IA
+              </span>
+            </div>
+
+            <div class="project-content">
+
+              <span class="project-category">
+                Educación
+              </span>
+
+              <h3>COTV</h3>
+
+              <p>
+                Dibujo Técnico + Inteligencia Artificial.
+              </p>
+
+              <button class="project-link">
+                Ver proyecto →
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="project-card project-chacrita reveal"
+            data-project="chacrita"
+          >
+
+            <div class="project-image">
+              <div class="project-symbol">
+                LC
+              </div>
+
+              <span class="project-type">
+                Producción + Web
+              </span>
+            </div>
+
+            <div class="project-content">
+
+              <span class="project-category">
+                Producción rural
+              </span>
+
+              <h3>La Chacrita</h3>
+
+              <p>
+                Huevos camperos, productos de chacra y sistema
+                de envases retornables.
+              </p>
+
+              <button class="project-link">
+                Ver proyecto →
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="project-card project-cata reveal"
+            data-project="cata"
+          >
+
+            <div class="project-image">
+              <div class="project-symbol">
+                C
+              </div>
+
+              <span class="project-type">
+                Base de datos + IA
+              </span>
+            </div>
+
+            <div class="project-content">
+
+              <span class="project-category">
+                Vinos patagónicos
+              </span>
+
+              <h3>Cata Patagona</h3>
+
+              <p>
+                Una guía inteligente para explorar vinos de
+                la Patagonia.
+              </p>
+
+              <button class="project-link">
+                Ver proyecto →
+              </button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- DIFERENCIAL -->
+    <section class="section differential-section">
+      <div class="container differential-grid">
+
+        <div class="differential-copy">
+
+          <span class="section-label light">
+            LA IDEA
+          </span>
+
+          <h2>
+            Una web puede ser
+            una herramienta.
+          </h2>
+
+          <p>
+            La diferencia está en pensar qué puede hacer
+            el sitio además de mostrar información.
+          </p>
+
+          <p>
+            Puede ayudar a buscar, ordenar, explicar,
+            comparar, recomendar y conectar conocimiento.
+          </p>
+
+        </div>
+
+
+        <div class="differential-points">
+
+          <div class="difference-item">
+            <span>01</span>
+            <div>
+              <h3>Información</h3>
+              <p>
+                Contenido organizado y accesible.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="difference-item">
+            <span>02</span>
+            <div>
+              <h3>Interacción</h3>
+              <p>
+                El usuario puede hacer algo más que mirar.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="difference-item">
+            <span>03</span>
+            <div>
+              <h3>Inteligencia</h3>
+              <p>
+                La IA puede convertirse en parte de la experiencia.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROCESO -->
+    <section class="section process-section" id="proceso">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">
+            CÓMO TRABAJAMOS
+          </span>
+
+          <h2>
+            De una idea a una herramienta digital.
+          </h2>
+        </div>
+
+
+        <div class="process-grid">
+
+          <div class="process-step reveal">
+            <span class="process-number">01</span>
+
+            <h3>Idea</h3>
+
+            <p>
+              Entendemos qué querés comunicar, resolver
+              o mejorar.
+            </p>
+          </div>
+
+
+          <div class="process-step reveal">
+            <span class="process-number">02</span>
+
+            <h3>Diseño</h3>
+
+            <p>
+              Organizamos la información y construimos
+              una experiencia clara.
+            </p>
+          </div>
+
+
+          <div class="process-step reveal">
+            <span class="process-number">03</span>
+
+            <h3>Inteligencia</h3>
+
+            <p>
+              Incorporamos herramientas de IA cuando
+              realmente aportan valor.
+            </p>
+          </div>
+
+
+          <div class="process-step reveal">
+            <span class="process-number">04</span>
+
+            <h3>Publicación</h3>
+
+            <p>
+              Convertimos el proyecto en un sitio accesible
+              desde cualquier dispositivo.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- NOSOTROS -->
+    <section class="section about-section" id="nosotros">
+      <div class="container about-grid">
+
+        <div class="about-mark">
+          <span>ESTUDIO</span>
+          <strong>WEB</strong>
+        </div>
+
+
+        <div class="about-copy">
+
+          <span class="section-label">
+            NOSOTROS
+          </span>
+
+          <h2>
+            Tecnología al servicio de una buena idea.
+          </h2>
+
+          <p>
+            Estudio Web nace de una forma de trabajar:
+            primero entender el problema y después elegir
+            la tecnología.
+          </p>
+
+          <p>
+            No buscamos hacer sitios complicados.
+            Buscamos hacer sitios que tengan sentido.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section class="section contact-section" id="contacto">
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+            <span class="section-label">
+              HABLEMOS
+            </span>
+
+            <h2>
+              ¿Tenés una idea?
+            </h2>
+
+            <p>
+              Podemos convertirla en un sitio.
+            </p>
+          </div>
+
+
+          <a
+            href="https://wa.me/5490000000000?text=Hola%20Estudio%20Web,%20quiero%20consultar%20por%20un%20sitio."
+            class="btn btn-light"
+            target="_blank"
+            rel="noopener"
+          >
+            Contactar por WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div>
+        <strong>ESTUDIO</strong>
+        <span> — Sitios Inteligentes</span>
+      </div>
+
+      <div>
+        © <span id="currentYear"></span>
+        Estudio Web
+      </div>
+
+    </div>
   </footer>
 
-</main>
+
+  <!-- MODAL -->
+  <div
+    class="modal"
+    id="projectModal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <span
+        class="section-label"
+        id="modalCategory"
+      >
+      </span>
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalDescription"></p>
+
+      <div class="modal-info" id="modalInfo"></div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
