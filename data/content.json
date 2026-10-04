@@ -1,0 +1,57 @@
+{
+  "site": {
+    "heroTitle1": "Webs que no solo muestran.",
+    "heroTitle2": "También saben.",
+    "heroText": "Diseñamos sitios web que combinan información, diseño e inteligencia para ayudar a cada proyecto a comunicar, organizar y crecer.",
+    "servicesTitle": "Sitios pensados para cada proyecto.",
+    "servicesText": "Desde una página institucional hasta una herramienta inteligente construida alrededor de una idea.",
+    "heroImage": "",
+    "whatsapp": "5492984881252",
+    "email": ""
+  },
+  "projects": [
+    {
+      "id": "cotv",
+      "name": "COTV",
+      "category": "Educación",
+      "tag": "Educación + IA",
+      "symbol": "COTV",
+      "description": "Dibujo Técnico + Inteligencia Artificial.",
+      "detail": "COTV es un proyecto educativo que combina Dibujo Técnico e Inteligencia Artificial para acompañar el proceso de aprendizaje.\n\nLa idea es que el alumno pueda consultar materiales, avanzar en sus láminas y recibir orientación de una IA tutor basada en contenidos y criterios definidos por el docente.",
+      "image": "",
+      "url": "https://cotvdibujotecnico.lovable.app/",
+      "whatsapp": "",
+      "status": "active",
+      "order": 1
+    },
+    {
+      "id": "chacrita",
+      "name": "La Chacrita",
+      "category": "Producción rural",
+      "tag": "Producción + Web",
+      "symbol": "LC",
+      "description": "Huevos camperos, productos de chacra y sistema de envases retornables.",
+      "detail": "Un proyecto de producción rural orientado a huevos camperos y productos de chacra.\n\nEl concepto digital busca organizar pedidos, productos, clientes y comunicación, incorporando además un sistema de envases retornables.",
+      "image": "",
+      "url": "https://lachacrita.netlify.app/",
+      "whatsapp": "",
+      "status": "active",
+      "order": 2
+    },
+    {
+      "id": "cata",
+      "name": "Cata Patagona",
+      "category": "Vinos patagónicos",
+      "tag": "Base de datos + IA",
+      "symbol": "C",
+      "description": "Una guía inteligente para explorar vinos de la Patagonia.",
+      "detail": "Una guía inteligente para descubrir vinos de la Patagonia.\n\nEl proyecto contempla una base de datos amplia de vinos, bodegas y vinotecas, con información organizada para facilitar la búsqueda y consulta.",
+      "image": "",
+      "url": "https://pixel-perfect-snap-143.lovable.app/",
+      "whatsapp": "",
+      "status": "active",
+      "order": 3
+    }
+  ],
+  "links": []
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Panel de Control — Estudio Web</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-body">
+
+  <!-- INGRESO -->
+  <main class="login-view" id="loginView" hidden>
+    <form class="login-card" id="loginForm" autocomplete="on">
+
+      <div class="brand">
+        <span class="brand-main">ESTUDIO</span>
+        <span class="brand-sub">Sitios Inteligentes</span>
+      </div>
+
+      <h1>Panel de Control</h1>
+      <p class="muted">Ingresá con tu contraseña de administración.</p>
+
+      <label class="field">
+        <span class="field-label">Contraseña</span>
+        <input
+          type="password"
+          id="loginPassword"
+          autocomplete="current-password"
+          required
+        >
+      </label>
+
+      <p class="form-error" id="loginError" role="alert" hidden></p>
+
+      <button class="btn btn-primary btn-block" type="submit" id="loginButton">
+        Ingresar
+      </button>
+
+    </form>
+  </main>
+
+
+  <!-- PANEL -->
+  <div id="appView" hidden>
+
+    <header class="admin-bar">
+      <div class="admin-wrap admin-bar-inner">
+
+        <div>
+          <span class="admin-eyebrow">ESTUDIO WEB</span>
+          <h1 class="admin-title">Panel de Control — Estudio Web</h1>
+        </div>
+
+        <div class="admin-bar-actions">
+          <a class="btn btn-secondary btn-small" href="/" target="_blank" rel="noopener">Ver sitio</a>
+          <button class="btn btn-secondary btn-small" type="button" id="logoutButton">Salir</button>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="admin-wrap">
+
+      <nav class="tabs" role="tablist" aria-label="Secciones del panel">
+        <button class="tab active" role="tab" data-tab="projects" aria-selected="true">Proyectos</button>
+        <button class="tab" role="tab" data-tab="site" aria-selected="false">Página principal</button>
+        <button class="tab" role="tab" data-tab="links" aria-selected="false">Enlaces</button>
+      </nav>
+
+      <!-- PROYECTOS -->
+      <section class="panel" id="panel-projects" role="tabpanel">
+
+        <div class="panel-head">
+          <div>
+            <h2>Proyectos</h2>
+            <p class="muted">Se muestran en el sitio según su orden. Los ocultos no aparecen.</p>
+          </div>
+          <button class="btn btn-primary" type="button" id="addProject">+ Agregar proyecto</button>
+        </div>
+
+        <div class="cards" id="projectsList"></div>
+
+      </section>
+
+      <!-- PÁGINA PRINCIPAL -->
+      <section class="panel" id="panel-site" role="tabpanel" hidden>
+
+        <div class="panel-head">
+          <div>
+            <h2>Página principal</h2>
+            <p class="muted">Textos, imagen y datos de contacto del sitio.</p>
+          </div>
+        </div>
+
+        <form class="card form" id="siteForm"></form>
+
+      </section>
+
+      <!-- ENLACES -->
+      <section class="panel" id="panel-links" role="tabpanel" hidden>
+
+        <div class="panel-head">
+          <div>
+            <h2>Enlaces</h2>
+            <p class="muted">Enlaces principales del sitio. Aparecen al pie de la página.</p>
+          </div>
+          <button class="btn btn-primary" type="button" id="addLink">+ Agregar enlace</button>
+        </div>
+
+        <div class="cards" id="linksList"></div>
+
+        <div class="links-actions">
+          <button class="btn btn-primary" type="button" id="saveLinks">Guardar enlaces</button>
+          <p class="muted small">Los cambios en los enlaces se aplican al tocar “Guardar enlaces”.</p>
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>

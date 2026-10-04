@@ -1,0 +1,20 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+# /admin lleva al panel
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+# El panel no se indexa ni se guarda en caché
+[[headers]]
+  for = "/admin.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-store"
+    Referrer-Policy = "no-referrer"
+    X-Frame-Options = "DENY"

@@ -57,12 +57,12 @@
 
           <span class="eyebrow">ESTUDIO WEB</span>
 
-          <h1>
+          <h1 id="heroTitle">
             Webs que no solo muestran.
             <span>También saben.</span>
           </h1>
 
-          <p class="hero-text">
+          <p class="hero-text" id="heroText">
             Diseñamos sitios web que combinan información,
             diseño e inteligencia para ayudar a cada proyecto
             a comunicar, organizar y crecer.
@@ -83,7 +83,7 @@
 
         <div class="hero-visual">
 
-          <div class="hero-card hero-card-main">
+          <div class="hero-card hero-card-main" id="heroCard">
             <div class="hero-card-top">
               <span class="status-dot"></span>
               <span>Sitio inteligente</span>
@@ -162,11 +162,11 @@
         <div class="section-heading">
           <span class="section-label">QUÉ HACEMOS</span>
 
-          <h2>
+          <h2 id="servicesTitle">
             Sitios pensados para cada proyecto.
           </h2>
 
-          <p>
+          <p id="servicesText">
             Desde una página institucional hasta una herramienta
             inteligente construida alrededor de una idea.
           </p>
@@ -249,7 +249,7 @@
         </div>
 
 
-        <div class="projects-grid">
+        <div class="projects-grid" id="projectsGrid">
 
           <article
             class="project-card project-cotv reveal"
@@ -565,6 +565,7 @@
           <a
             href="https://wa.me/5492984881252?text=Hola%20Estudio%20Web,%20quiero%20consultar%20por%20un%20sitio."
             class="btn btn-light"
+            id="contactWhatsapp"
             target="_blank"
             rel="noopener"
           >
@@ -587,6 +588,8 @@
         <strong>ESTUDIO</strong>
         <span> — Sitios Inteligentes</span>
       </div>
+
+      <div class="footer-links" id="footerLinks" hidden></div>
 
       <div>
         © <span id="currentYear"></span>
@@ -627,6 +630,8 @@
       <p id="modalDescription"></p>
 
       <div class="modal-info" id="modalInfo"></div>
+
+      <div class="modal-actions" id="modalActions"></div>
 
     </div>
 
