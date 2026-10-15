@@ -395,13 +395,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const byOrder = (a, b) => (Number(a.order) || 0) - (Number(b.order) || 0);
 
 
+  // Portadas por defecto; las imágenes cargadas desde el panel tienen prioridad.
+  const projectCovers = {
+  "cotv": "https://estudio-web.netlify.app/assets/cotv.webp",
+  "chacrita": "https://estudio-web.netlify.app/assets/chacrita.webp",
+  "cata": "https://estudio-web.netlify.app/assets/cata-patagona.webp"
+};
+
   function buildProjectCard(project) {
 
     const card = make("article", "project-card reveal");
     card.dataset.project = project.id;
 
     const image = make("div", "project-image");
-    const photo = safeHref(project.image, false);
+    const photo = safeHref(project.image, false) || projectCovers[project.id] || "";
+    if ((!project.image || project.image === projectCovers[project.id]) && projectCovers[project.id]) image.classList.add("project-cover-" + project.id);
 
     if (photo) {
 

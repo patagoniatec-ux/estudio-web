@@ -1013,3 +1013,10 @@ button {
 .project-content h3 {
   overflow-wrap: anywhere;
 }
+
+/* Portadas de los casos de Estudio Web */
+.project-image .project-type { background: rgba(17, 25, 22, .78); }
+.project-cover-chacrita .project-photo { object-fit: contain; }
+.project-cover-chacrita { background: #edf2ec; }
+.project-image { aspect-ratio: 4 / 3; min-height: 0; }
+@media (max-width: 900px) { .project-image { aspect-ratio: 16 / 10; } }
