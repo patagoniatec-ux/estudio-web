@@ -397,9 +397,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Portadas por defecto; las imágenes cargadas desde el panel tienen prioridad.
   const projectCovers = {
-  "cotv": "https://estudio-web.netlify.app/assets/cotv.webp",
-  "chacrita": "https://estudio-web.netlify.app/assets/chacrita.webp",
-  "cata": "https://estudio-web.netlify.app/assets/cata-patagona.webp"
+  "cotv": "https://patagoniatec-ux.github.io/estudio-web/assets/cotv.webp",
+  "chacrita": "https://patagoniatec-ux.github.io/estudio-web/assets/chacrita.webp",
+  "cata": "https://patagoniatec-ux.github.io/estudio-web/assets/cata-patagona.webp"
 };
 
   function buildProjectCard(project) {
